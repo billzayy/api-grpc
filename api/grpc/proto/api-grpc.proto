@@ -1,0 +1,35 @@
+syntax="proto3";
+
+package proto;
+
+option go_package = "github.com/billzayy/api-grpc/api/grpc";
+
+// The payment service definition.
+service PaymentService {
+    rpc PaymentProduct(TicketRequest) returns (PaymentResponse);
+}
+
+// The request message containing the user's details.
+// message PaymentRequest {
+//     string name = 1;
+// }
+
+// The response message containing the payment details.
+message PaymentResponse {
+    string message = 1;
+}
+
+message TicketRequest{
+    repeated Ticket ticket = 1;
+}
+
+message Ticket {
+    string ticketId = 1;
+    string ticketName = 2;
+    int32 ticketQuantity = 3;
+    repeated string ticketSeat = 4; // An array of seat strings
+    string ticketPrice = 5;
+    string checkIn = 6;
+    string checkOut = 7;
+    string clientName = 8;
+}

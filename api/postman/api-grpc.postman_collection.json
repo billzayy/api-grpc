@@ -1,0 +1,83 @@
+{
+	"info": {
+		"_postman_id": "afdd5f1d-17aa-4fb1-ba3d-f1ccbe7569e5",
+		"name": "api-grpc",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31530016"
+	},
+	"item": [
+		{
+			"name": "/booking?clientName=Bill",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}/booking?clientName=Bill",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"booking"
+					],
+					"query": [
+						{
+							"key": "clientName",
+							"value": "Bill"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/ticket/add",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    {\n        \"ticketId\" :\"1\",\n        \"ticketName\" : \"Vung Tau - Da Lat\",\n        \"ticketQuantity\": 2,\n        \"ticketSeat\": [\n            \"G1\", \"G2\"\n        ], \n        \"ticketPrice\" : \"$100\",\n        \"checkIn\": \"14h00 29/04/2024\",\n        \"checkOut\" : \"05h00 30/04/2024\",\n        \"clientName\" : \"Bill\"\n    }, \n    {\n        \"ticketId\" :\"758\",\n        \"ticketName\" : \"Da Lat - Vung Tau\",\n        \"ticketQuantity\": 2,\n        \"ticketSeat\": [\n            \"A5\", \"A7\"\n        ], \n        \"ticketPrice\" : \"$35\",\n        \"checkIn\": \"21h00 02/05/2024\",\n        \"checkOut\" : \"08h00 03/05/2024\",\n        \"clientName\" : \"Bill\"\n    }\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HOST}}/ticket/add",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"ticket",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/tickets?clientName=Bill",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}/tickets?clientName=Bill",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"tickets"
+					],
+					"query": [
+						{
+							"key": "clientName",
+							"value": "Bill"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
